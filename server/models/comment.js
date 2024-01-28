@@ -5,7 +5,7 @@ const CommentSchema = new mongoose.Schema({
   // here i am using default id created by mongodb
   blogId: { type: mongoose.Schema.Types.ObjectId, ref: "Blog", required: true },
   name: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
+  email: { type: String, required: true },
   body: { type: String, required: true },
 });
 

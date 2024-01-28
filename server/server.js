@@ -2,7 +2,8 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
-import blogRouter from './routes/blogs.js';
+import blogRouter from "./routes/blogs.js";
+import commentRouter from "./routes/comments.js";
 
 export const app = express();
 dotenv.config();
@@ -11,7 +12,10 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 const api = process.env.API;
+
+// api
 app.use(`${api}/blogs`, blogRouter);
+app.use(`${api}/comments`, commentRouter);
 
 // Database Connection
 mongoose
