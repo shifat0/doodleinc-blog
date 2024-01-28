@@ -2,6 +2,7 @@ import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
+import blogRouter from './routes/blogs.js';
 
 export const app = express();
 dotenv.config();
@@ -10,6 +11,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 const api = process.env.API;
+app.use(`${api}/blogs`, blogRouter);
 
 // Database Connection
 mongoose
