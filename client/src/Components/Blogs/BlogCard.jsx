@@ -1,16 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const BlogCard = () => {
+const BlogCard = ({ blog }) => {
   return (
-    <div class="max-w-md bg-white p-6 rounded-md shadow-md">
-      <h2 class="text-xl font-semibold mb-2">Blog Title</h2>
-      <p class="text-gray-600 mb-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-      <a href="#" class="text-blue-500 hover:underline">
+    <div className="w-[20rem] bg-white p-6 rounded-md shadow-md">
+      <h2 className="text-xl font-semibold mb-2">{blog?.title}</h2>
+      <Link to={`/${blog?._id}`} className="text-blue-500 hover:underline">
         Read more
-      </a>
+      </Link>
     </div>
   );
 };
