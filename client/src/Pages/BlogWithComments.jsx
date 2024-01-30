@@ -9,7 +9,7 @@ const BlogWithComments = () => {
   const { state } = useLocation();
   // fetching blogComments
   const { data } = useFetch(
-    `http://localhost:5000/api/v1/comments?blogId=${id}`
+    `https://doodleinc-blog.vercel.app/api/v1/comments?blogId=${id}`
   );
 
   console.log("triggered", data);

@@ -3,7 +3,9 @@ import BlogCard from "../Components/Blogs/BlogCard";
 import useFetch from "../hooks/useFetch";
 
 const Blogs = () => {
-  const { data, loading } = useFetch("http://localhost:5000/api/v1/blogs");
+  const { data, loading } = useFetch(
+    "https://doodleinc-blog.vercel.app/api/v1/blogs"
+  );
   return (
     <section className="mt-10 flex flex-col items-center justify-center">
       <h1 className="text-3xl text-center">Blogs</h1>
